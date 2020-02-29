@@ -1,0 +1,20 @@
+{
+  "name": "front-end",
+  "version": "1.0.0",
+  "description": "Front end styling",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^9.7.4",
+    "bootstrap": "^4.4.1",
+    "concat": "^1.0.3",
+    "node-sass": "^4.13.1",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^7.0.27",
+    "postcss-cli": "^7.1.0"
+  }
+}
