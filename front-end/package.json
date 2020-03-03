@@ -4,14 +4,22 @@
   "description": "Front end styling",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "node-sass scss/main.scss dist/css/main.css -w -r",
+    "compile": "node-sass scss/main.scss dist/css/main.comp.css",
+    "prefix": "postcss --u autoprefixer -b \"last 10 versions\" dist/css/main.comp.css --no-map -o dist/css/main.css",
+    "compress": "node-sass dist/css/main.css dist/css/main.min.css --output-style compressed",
+    "build": "npm-run-all compile prefix compress"
   },
+  "browserslist": [
+    "last 10 versions"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^4.4.1"
   },
-  "devDependencies":{
+  "devDependencies": {
     "autoprefixer": "^9.7.4",
     "concat": "^1.0.3",
     "node-sass": "^4.13.1",
