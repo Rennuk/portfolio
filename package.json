@@ -6,7 +6,11 @@
   "scripts": {
     "start": "nodemon app.js",
     "start-server": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "node-sass front-end/scss/main.scss front-end/dist/css/main.css -w -r",
+    "compile": "node-sass front-end/scss/main.scss front-end/dist/css/main.comp.css",
+    "prefix": "postcss --u autoprefixer -b \"last 10 versions\" front-end/dist/css/main.comp.css --no-map -o front-end/dist/css/main.css",
+    "compress": "node-sass front-end/dist/css/main.css public/css/main.min.css --output-style compressed",
+    "build": "npm-run-all compile prefix compress"
   },
   "repository": {
     "type": "git",
@@ -22,13 +26,21 @@
   },
   "homepage": "https://github.com/Rennuk/portfolio#readme",
   "dependencies": {
+    "autoprefixer": "^9.7.4",
     "body-parser": "^1.19.0",
+    "concat": "^1.0.3",
     "connect-mongodb-session": "^2.3.1",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "express-session": "^1.17.0",
     "mongodb": "^3.5.4",
     "mongoose": "^5.9.2",
-    "nodemon": "^2.0.2"
+    "node-sass": "^4.13.1",
+    "nodemon": "^2.0.2",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^7.1.0"
+  },
+  "devDependencies": {
+    "bootstrap": "^4.4.1"
   }
 }
